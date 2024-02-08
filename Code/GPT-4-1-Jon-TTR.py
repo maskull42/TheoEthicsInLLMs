@@ -1,0 +1,22 @@
+import nltk
+from nltk.tokenize import word_tokenize
+
+# Ensure the 'punkt' tokenizer model is downloaded
+nltk.download('punkt')
+
+# Function to calculate lexical diversity
+def calculate_lexical_diversity(text):
+    # Tokenize the text
+    tokens = word_tokenize(text.lower())
+    # Calculate Type-Token Ratio (TTR) for Lexical Diversity
+    lexical_diversity = len(set(tokens)) / len(tokens)
+    return lexical_diversity
+
+# Insert your text here
+sample_text = """
+Now Jonah, having sat in the heat and grappling with the loss of the bush, found the sun overwhelming, yet his heart remained unyielded, a fortress against the waves of compassion that the Lord intended for Nineveh. But the Lord, in His inexhaustible patience, had yet another lesson for His wayward servant. And it came to pass as Jonah was scorched by the sun, the Lord God allowed a fresh wind to blow, a gentle breeze that eased the fury of the day's heat. And along this breeze drifted the voices of the people of Nineveh—their prayers and laments, their cries of repentance and hopes for mercy. And Jonah listened, for the wind denied him reprieve from their supplications. In that moment, a traveler approached, a scribe from Nineveh, seeking the prophet who had foretold their doom. Upon finding Jonah, the scribe spoke, "Man of God, my name is Eliakim, and I bring you tidings from the heart of Nineveh. Your words have stirred the very soul of our city. Know that we, once blind in our wickedness, now see with eyes clear and contrite." Jonah, moved by the Spirit, asked, "What is this change that has taken hold of your people?" Eliakim then drew forth a scroll, worn and teary, inscribed with the words of the citizens' covenant with God—a promise to walk in His ways. "Behold," Eliakim declared, "the vow of a nation that was lost but now seeks the path of righteousness." And God spoke then to Jonah, for Eliakim could not hear, "Do you see, Jonah, how the heart of stone can become a heart of flesh? Will you not also soften, as this city, teeming with lost souls, has softened before Me?" Jonah, his anger now mingled with shame, took the scroll and read the words aloud, each sentence a wave crashing against his stubborn spirit. He saw his own reflection in this people; bound by their past, they sought redemption. Through the cracks in his resolve, the light of understanding began to dawn. With reluctant lips, he responded, "Lord, Your ways are deep as the sea, and Your grace, it knows no shore. Who am I to harbor bitterness when such a bounty of forgiveness is offered?" As he remained with Eliakim, Jonah was moved by the tales of transformation within Nineveh. Children once taught to fight now clasped their hands in peace, and merchants who dealt dishonestly now traded fairly. The fabric of an entire city was rewoven, not from threads of despair, but from the strands of hope and humility. The Lord then said to Jonah, "Go once more into Nineveh, for I have yet another task for you." And Jonah, his heart humbled and his spirit contrite, rose and walked back into the city, a city that had become a testament to the power of repentance and grace. There, Jonah spoke of the Lord's boundless love, His readiness to receive a repentant heart and His sovereign power to redeem even the most errant of ways. He recounted his own journey, from the depths of the great fish to the shadow of the withered bush, teaching that mercy triumphs over judgment and that the embrace of God is ever waiting. And as Jonah labored among the people, sharing in their hopes and upholding their covenant, his spirit was renewed and his faith made firm. In Nineveh, the man who once fled from the presence of the Lord found his calling, serving the very people he wished doomed, becoming a beacon of the Lord's enduring mercy. Thus the story of Jonah extends beyond the pages long left to silence, a testament to the relentless pursuit of God's love and the redeeming power that works through even the most reluctant of prophets. For in Nineveh did bloom a garden from the seeds of repentance sown by a prophet who learned that the breadth of divine compassion is far greater than the shadow of any bush under which one might rest.
+"""
+
+# Calculate and print lexical diversity
+lexical_diversity = calculate_lexical_diversity(sample_text)
+print("Lexical diversity (Type-Token Ratio):", lexical_diversity)
